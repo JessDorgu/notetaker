@@ -14,11 +14,11 @@ app.use(express.json());
 // create routes to connect the index and notes html
 
 app.get("/", (req,res)=>{
-  res.sendFile(__dirname+"/public/index.html");
+  res.sendFile(__dirname+"/Develop/public/index.html");
 });
 
 app.get('/notes', (req, res) => {
-  res.sendFile(__dirname + '/public/notes.html');
+  res.sendFile(__dirname + '/Develop/public/notes.html');
 });
 
 app.get("/api/notes", (req,res) =>{
