@@ -3,7 +3,7 @@ const fs = require("fs");
 const uuid = require("uuid");
 
 const app = express();
-const PORT = 3008;
+const PORT = process.env.PORT || 3000;
 
 //static files
 app.use(express.static('public'));
