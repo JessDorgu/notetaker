@@ -1,22 +1,26 @@
-console.log("yep");
-
 const express = require ('express');
-const path = require('path');
+
+
 const app = express();
 
-const PORT = 3005;
+const PORT = 3008
+;
 
 //static files
 app.use(express.static('public'));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
 
 // create routes to connect the index and notes html
 
-app.get('/', (req, res) => res.send('Navigate to /notes'));
-app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, 'public/notes.html'))
-);
-// app.use(express.urlencoded({extended:true}));
-// app.use(express.json());
+app.get("/", (req,res)=>{
+  res.sendFile(__dirname+"/public/index.html");
+});
+
+app.get('/notes', (req, res) => {
+  res.sendFile(__dirname + '/public/notes.html');
+});
+
 
 
 
